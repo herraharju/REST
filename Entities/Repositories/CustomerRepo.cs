@@ -32,7 +32,7 @@ namespace Entities.Repositories
             }
         }
 
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             using (var repo = new LiteDB.LiteRepository(ConnectionString))
             {
