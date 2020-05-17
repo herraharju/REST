@@ -18,13 +18,16 @@ namespace Resting
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+             .ConfigureLogging(logging =>
+                 {
+                     logging.AddEventLog(eventLogSettings =>
+                     {
+                         eventLogSettings.SourceName = "MyLogs";
+                     });
+                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-
-        public const string Database = "Database.db";
     }
-
-    
 }

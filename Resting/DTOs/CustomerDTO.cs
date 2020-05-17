@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Resting.Models
+namespace Resting.DTOs
 {
-    public class Customer
+    public class CustomerDTO
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
